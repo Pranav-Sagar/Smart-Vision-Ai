@@ -47,6 +47,14 @@ Open:
 ```
 http://127.0.0.1:5000
 ```
+## Screen Shots
+### Image Upload
+
+![Upload](screenshots/IMG.png)
+
+### Human Face Detection
+
+![Results](screenshots/Human.png)
 
 ## Author
 
