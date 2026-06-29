@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Azure AI Vision Analyzer</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">
+
+        <div class="logo-box red"></div>
+        <div class="logo-box green"></div>
+        <div class="logo-box blue"></div>
+        <div class="logo-box yellow"></div>
+
+        <h2>Azure AI Vision Analyzer</h2>
+
+    </div>
+
+    <div class="badge">
+
+        Microsoft Azure AI Vision
+
+    </div>
+
+</nav>
+
+<header>
+
+    <h1>Image Analysis using Azure AI Vision</h1>
+
+    <p>
+
+        Upload an image to detect semantic tags and extract text using OCR.
+
+    </p>
+
+</header>
+
+<div class="container">
+
+    <!-- LEFT PANEL -->
+
+    <div class="card">
+
+        <h2>Upload Image</h2>
+
+        <div id="dropZone" class="drop-zone">
+
+            <input
+                type="file"
+                id="imageInput"
+                accept="image/*">
+
+            <div class="upload-icon">
+
+                📷
+
+            </div>
+
+            <h3>Drag & Drop</h3>
+
+            <p>or click to browse</p>
+
+        </div>
+
+        <div class="divider">
+
+            OR
+
+        </div>
+
+        <div class="url-box">
+
+            <input
+                id="imageUrl"
+                type="text"
+                placeholder="Paste Image URL">
+
+            <button id="loadUrlBtn">
+
+                Load
+
+            </button>
+
+        </div>
+
+        <div
+            id="previewCard"
+            class="preview-card hidden">
+
+            <img
+                id="previewImage"
+                alt="Preview">
+
+        </div>
+
+        <button
+            id="analyzeBtn"
+            class="analyze-btn">
+
+            Analyze Image
+
+        </button>
+
+    </div>
+
+    <!-- RIGHT PANEL -->
+
+    <div class="card">
+
+        <h2>Analysis Results</h2>
+
+        <div
+            id="loading"
+            class="loading hidden">
+
+            <div class="loader"></div>
+
+            <p>Analyzing image...</p>
+
+        </div>
+
+        <div
+            id="errorBox"
+            class="error hidden">
+
+        </div>
+
+        <div
+            id="results"
+            class="hidden">
+
+            <!-- Human Detection -->
+
+            <section class="result-section">
+
+                <h3>👤 Human Detection</h3>
+
+                <div
+                    id="humanResult"
+                    class="result-box">
+
+                    Waiting...
+
+                </div>
+
+            </section>
+
+            <!-- Tags -->
+
+            <section class="result-section">
+
+                <h3>🏷 Image Tags</h3>
+
+                <div
+                    id="tags"
+                    class="chip-container">
+
+                </div>
+
+            </section>
+
+            <!-- OCR -->
+
+            <section class="result-section">
+
+                <h3>📄 Extracted Text (OCR)</h3>
+
+                <pre
+                    id="ocr"
+                    class="ocr-box">
+
+                </pre>
+
+            </section>
+
+            <!-- JSON -->
+
+            <section class="result-section">
+
+                <details>
+
+                    <summary>
+
+                        Raw Azure Response
+
+                    </summary>
+
+                    <pre id="rawJson">
+
+                    </pre>
+
+                </details>
+
+            </section>
+
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+
+    <p>
+
+        Built with Flask and Microsoft Azure AI Vision Image Analysis API
+
+    </p>
+
+</footer>
+
+<script src="/static/script.js"></script>
+
+</body>
+
+</html>
